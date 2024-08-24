@@ -8,9 +8,56 @@
 </head>
 <body>
     <header class="formulario-header">
-        <h1>Formularia de envío</h1>
+        <h1>Formulario de envío</h1>
         <p><em>¿Quieres dar una charla o presentar un póster? Rellena el siguiente formulario.</em></p>
-    </header>    
+    </header>
+    
+    <form action="" method="get" class="formulario-form">
+
+        <div class="formulario-fila">
+            <label for="fullname">Nombre</label>
+            <input type="text" name="asistente-nombre" id="fullname">
+        </div>
+        <div class="formulario-fila">
+            <label for="email">Email</label>
+            <input type="email" name="asistente-email" id="email" placeholder="ejemplo@correo.com">
+        </div>
+        <fieldset class="legacy-formulario-fila">
+            <legend>Tipo</legend>
+            <input type="radio" name="tipo-trabajo" id="tipo-trabajo-1" value ="oral" checked>
+            <label for="tipo-trabajo-1" class = "radio-label">Presentación oral</label>
+            <input type="radio" name="tipo-trabajo" id="tipo-trabajo-2" value = "poster">
+            <label for="tipo-trabajo-2" class="radio-label">Póster</label>
+        </fieldset>
+
+        <div class="formulario-fila">
+            <label for="camiseta">Talla</label>
+            <select name="talla-camiseta" id="camiseta">
+                <option value="xs">Extra pequeña</option>
+                <option value="s">Pequeña</option>
+                <option value="m">Mediana</option>
+                <option value="l">Grande</option>
+                <option value="xl">Extra grande</option>
+            </select>
+        </div>
+        <div class='formulario-fila'>
+            <label for='resumen'>Resumen</label>
+            <textarea id='resumen' name='resumen-trabajo'></textarea>
+            <div class='instrucciones'>Longitud de 500 palabras o menos</div>
+          </div>
+          <div class='formulario-fila'>
+            <label class='checkbox-label' for='disponible'>
+            <input id='disponible'
+                   name='disponible'
+                   type='checkbox'
+                   value='esta-disponible'/>
+            <span>Confirmo que puedo asistir a la conferencia</span>
+            </label>
+          </div>
+          <div class='formulario-fila'>
+            <button>Enviar</button>
+          </div>
+    </form>
 
 
 

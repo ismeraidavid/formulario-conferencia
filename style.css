@@ -1,3 +1,9 @@
+:root {
+    --main-bg-color: #7AB2B2;
+    --alter-bg-color: #CDE8E5;
+    --border-color: #D6D9DC;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -6,7 +12,7 @@
 
 body {
     color: #5D6063;
-    background-color: #7AB2B2;
+    background-color: var(--main-bg-color);
     font-family: "Helvetica", "Arial", sans-serif;
     font-size: 16px;
     line-height: 1.3;
@@ -18,17 +24,180 @@ body {
 
 .formulario-header {
     text-align: center;
-    background-color: #CDE8E5;
-    border: 1px solid #D6D9DC;
+    background-color: var(--alter-bg-color);
+    border: 1px solid var(--border-color);
     border-radius: 3px;
 
     width: 80%; /* 80% del body */
     margin: 40px 0;
     padding: 50px;
-
 }
 
 .formulario-header h1 {
     font-size: 30px;
     margin-bottom: 20px;
+}
+
+.formulario-form {
+    background-color: var(--alter-bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 3px;
+
+    width: 80%;
+    padding: 50px;
+    margin: 0 0 40px 0;
+}
+
+.formulario-fila {
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.formulario-fila input[type='text'], .formulario-fila input[type='email'] {
+    background-color: white;
+    border: 1px solid var(--border-color);
+    border-radius: 3px;
+    width: 100%;
+    padding: 7px;
+    font-size: 14px;
+}
+
+.formulario-fila label {
+    margin-bottom: 15px;
+}
+
+.formulario-fila input[type='text']:invalid,
+.formulario-fila input[type='email']:invalid {
+    border: 1px solid #D55C5F;
+    color: #D55C5F;
+    box-shadow: none;
+}
+
+.legacy-formulario-fila {
+    border: none;
+    margin-bottom: 40px;
+}
+
+.legacy-formulario-fila legend {
+    margin-bottom: 15px;
+}
+
+.legacy-formulario-fila .radio-label {
+    display: block;
+    font-size: 14px;
+    padding: 0 20px 0 10px;
+}
+
+.legacy-formulario-fila input[type="radio"] {
+    margin-top: 2px;
+}
+
+.legacy-formulario-fila .radio-label,
+.legacy-formulario-fila input[type="radio"] {
+    float:left;
+}
+
+.formulario-fila select {
+    width: 100%;
+    padding: 5px;
+    font-size: 14px;            
+    -webkit-appearance: none;   
+  }
+
+.formulario-fila textarea {
+    font-family: "Helvetica", "Arial", sans-serif;
+    font-size: 14px;
+
+    border: 1px solid var(--border-color);
+    border-radius: 3px;
+
+    min-height: 200px;
+    margin-bottom: 10px;
+    padding: 7px;
+    resize: none;
+}
+
+.formulario-fila .instrucciones {
+    color: #999999;
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+.formulario-fila .checkbox-label {
+    margin-bottom: 0;
+  }
+
+.formulario-fila button {
+  font-size: 16px;
+  font-weight: bold;
+
+  color: #FFFFFF;
+  background-color: #7AB2B2;
+
+  border: none;
+  border-radius: 3px;
+
+  padding: 10px 40px;
+  cursor: pointer;
+}
+
+.formulario-fila button:hover {
+  background-color: #a8d8d8;
+}
+
+.formulario-fila button:active {
+  background-color: #14630d;
+}
+
+
+
+/* MEDIA QUERY */
+
+@media only screen and (min-width: 700px){
+    .formulario-header,
+    .formulario-form {
+        width: 600px;
+    }
+    .formulario-fila {
+        flex-direction: row;
+        align-items: flex-start; /* Para evitar stretching */
+        margin-bottom: 20px;
+    }
+    .formulario-fila input[type='text'],
+    .formulario-fila input[type='email'],
+    .formulario-fila select,
+    .formulario-fila textarea {
+        width: 250px;
+        height: initial;
+    }
+    .formulario-fila label {
+        text-align: right;
+        width: 120px;
+        margin-top: 7px;
+        padding-right: 20px;
+
+    }
+    .legacy-formulario-fila {
+        margin-bottom: 10px;
+    }
+    .legacy-formulario-fila legend {
+        width: 120px;
+        text-align: right;
+        padding-right: 20px;
+    }
+    .legacy-formulario-fila legend {
+        float: left;
+    }
+    .formulario-fila .instrucciones {
+        margin-left: 120px;
+    }
+    .formulario-fila .checkbox-label {
+        margin-left: 120px;
+        width: auto;
+      }
+    .formulario-fila button {
+        margin-left: 120px;
+      }
 }
